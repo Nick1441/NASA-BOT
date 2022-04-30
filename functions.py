@@ -64,11 +64,13 @@ async def nasaImage(url, title, date, message, error):
         except:
             print()
 
+
+
         imgTitle = data['title']
 
         imgEmbed = discord.Embed(title=f"{title}\n{imgTitle}", description=f"Image Taken on {date}.\n<@{message.author.id}>", color=0x0abccc)
         imgEmbed.set_image(url=imgURL)
-
+        
         await message.channel.send(embed=imgEmbed)
     except:
         await message.channel.send(f"{error}")
